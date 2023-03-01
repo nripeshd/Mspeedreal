@@ -360,8 +360,12 @@
                     {% endif %}
                     {%- assign img_url = variant.image.src | product_img_url: 'grande' -%}
                     <a href="{{ variant.url }}">
-                      <img src="{{ img_url }}" width="38" height="38" class="variant-swatches"
-                    ></a>
+                      <img src="{{ variant.image.src | img_url: '80x' }}"
+                           width="38"
+                           height="38"
+                           loading="lazy"
+                           class="lazyload variant-swatches">
+                    </a>
                   {% endif %}
                 {% endfor %}
               </div>

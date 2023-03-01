@@ -45,6 +45,18 @@
           assign sizes = "100vw"
         endif
       -%}
+
+{% if section.settings.RemoveLazy %}
+<picture>
+  <source media="(max-width:750px)" srcset="{{ section.settings.image | img_url: '900x' }}">
+  <source media="(min-width:750px)" srcset="{{ section.settings.image | img_url: '1800x' }}">
+  <img src="{{ section.settings.image | img_url: '300x' }}"
+       data-parent-fit="cover"
+       class="banner-img removelazyload"
+       alt="{{ section.settings.image.alt | escape }}"
+       style="object-fit: cover;height: 100%;opacity: 1 !important;" width="100%" height="100%">
+</picture>
+{% else %}
       {{ section.settings.image | image_url: width: 1500 | image_tag:
         loading: 'lazy',
         width: section.settings.image.width,
@@ -54,6 +66,8 @@
         widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
         alt: section.settings.image.alt | escape
       }}
+{% endif %}
+
     </div>
   {%- elsif section.settings.image_2 == blank -%}
     <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}">
@@ -75,6 +89,18 @@
           assign sizes = "100vw"
         endif
       -%}
+
+{% if section.settings.RemoveLazy %}
+<picture>
+  <source media="(max-width:750px)" srcset="{{ section.settings.image_2 | img_url: '900x' }}">
+  <source media="(min-width:750px)" srcset="{{ section.settings.image_2 | img_url: '1800x' }}">
+  <img src="{{ section.settings.image_2 | img_url: '300x' }}"
+       data-parent-fit="cover"
+       class="banner__media-image-half removelazyload"
+       alt="{{ section.settings.image_2.alt | escape }}"
+       style="object-fit: cover;height: 100%;opacity: 1 !important;" width="100%" height="100%">
+</picture>
+{% else %}
       {{ section.settings.image_2 | image_url: width: 1500 | image_tag:
         loading: 'lazy',
         width: section.settings.image_2.width,
@@ -84,6 +110,8 @@
         widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
         alt: section.settings.image_2.alt | escape
       }}
+{% endif %}
+
     </div>
   {%- endif -%}
   <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width">
@@ -120,6 +148,12 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "RemoveLazy",
+      "label": "Improve FCP (remove lazy-load from first image)",
+      "default": false
+    },
     {
       "type": "image_picker",
       "id": "image",
