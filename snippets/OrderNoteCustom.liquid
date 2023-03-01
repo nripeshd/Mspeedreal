@@ -1,0 +1,33 @@
+
+{% comment %}-----------OrderNote----------------------------------------------------------------------------{% endcomment %}             
+{%- assign selected_variant = product.selected_or_first_available_variant -%}
+{% assign _ordernote ='' %}
+{% if selected_variant.inventory_management %}
+      {% if selected_variant.inventory_quantity <= -300 %}
+          {% assign _ordernote = 'Sold out' %}
+       {%else%}
+          {% if selected_variant.inventory_quantity > 0 %}           
+            {% assign fromDays = 7 | times: 86400 %}
+            {% assign toDays = 12 | times: 86400 %}
+            {%assign start_date="now" | date: "%s" | plus: fromDays | date: "%b %d" %}
+            {%assign end_date="now" | date: "%s" | plus: toDays | date: "%b %d, %Y" %}
+            {% assign _ordernote = 'In Stock: Ships by '| append: start_date | append: ' to '| append: end_date  %}                             
+       
+          {%else%}
+              {% assign Dated = selected_variant.inventory_quantity | abs %}    
+              {% assign fromDays = Dated| plus: 7 | times: 86400 %}
+              {% assign toDays =  Dated| plus: 12 | times: 86400 %}
+              {%assign start_date="now" | date: "%s" | plus: fromDays | date: "%b %d" %}
+              {%assign end_date="now" | date: "%s" | plus: toDays | date: "%b %d, %Y" %}             
+              {% assign _ordernote = 'Ships by '| append: start_date | append: ' to '| append: end_date  %}
+                       
+          {%endif%}   			
+      {% endif %}
+<!--           management else -->
+{% else %}
+    {% assign _ordernote = 'Sold out' %}
+   <!--    management endif -->    
+{% endif %}
+<input type="hidden" id="ordernote" class="ordernote" value="{{ _ordernote }}" name="properties[_ordernote]"  data-type="ordernote"> 
+<!-- <input type="hidden" id="ordernote" class="ordernote" value="{{ _ordernote }}" name="properties[testorder]">  -->
+<!--      End Shipping by theme  -->

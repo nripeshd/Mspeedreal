@@ -1,0 +1,36 @@
+<meta name="google-site-verification" content="xxZcogVArp9UdgKGm38IuxLO2tmJcU3Idun5hQzWCbw" />
+
+{% comment %}<meta name="facebook-domain-verification" content="q70brk6a3ycux047galx8cn8yctp8i" /> {% endcomment %}
+    
+  {% if template contains 'search' %}
+    <meta name="robots" content="noindex">
+  {% endif %}
+  
+  
+  {% if template contains 'page' %}
+    {% if page.title == "Search Results" %}
+      <meta name="robots" content="noindex">
+    {% endif %}
+  {% endif %}
+  
+    
+  {% if template contains 'blog' %}
+    {% if blog.articles_count == 0 %}
+      <meta name="robots" content="noindex">
+    {% endif %}
+  {% endif %}
+        {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-967543437');
+</script>

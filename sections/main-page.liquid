@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+<!--  Tejashwani -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% if page.handle == "driftwood-furniture-decor-lighting" or page.handle=="vegan-leather-bonded-leather-the-all-weather-alt-leathers" or page.handle == "reclaimed-recycled-wood-furniture" or page.handle == "tv-stands-entertainment-center-tv-console" or page.handle == "vegan-leather-bonded-leather-the-all-weather-alt-leathers" or page.handle == "ceramic-terracotta-planters-handmade-planters-and-pots-using-clay-and-earth-baked-in-kiln-and-under-the-sun" or page.handle == "christmas-tree-decorations-ornaments-lights-gifts" or page.handle == "bamboo-wicker-rattan-furniture" or page.handle == "buy-driftwood-furniture-decor-lighting" or page.handle == "buy-leather-furniture-decor-chairs" or page.handle == "buy-petrified-wood-furniture-for-sale" or page.handle == "bamboo-rattan-lamps-lighting-chandeliers" or page.handle == "garden-age-supply-stone-furniture-fountains-figures-landscaping-tables-benches-stone-buddhas" or page.handle == "uttermost-accent-furniture-mirrors-wall-decor-clocks-lamps-art" or page.handle == "work-from-home-covid19-pandemic-home-office-desk-chair" or page.handle == "outdoor-patio-garden-furniture" or page.handle == "beds-bedroom-sets-headboards-mattresses-bedroom-furniture" or page.handle == "dining-tables-dining-sets-modway-modloft-flash-lumisource-control-brand" or page.handle == "rustic-decor" or page.handle == "find-the-perfect-vanity-for-your-bathroom" or page.handle == "industrial-decor-and-how-to-get-the-look" or page.handle == "modish-green-initiative-sustainable-recycled" or page.handle == "entertainment-centers-are-back-in-style-again" %}
+  
+<link rel="stylesheet" href="{{ 'buyingGuide-by-tez.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'buyingGuide-by-tez.css' | asset_url | stylesheet_tag }}</noscript>
+
+
+{% elsif page.handle == "top-teak-root-furniture-to-buy-from-modish-1" or page.handle == "top-selling-candle-holders-candelabras-votives-tealights" or page.handle == "top-teak-root-furniture-to-buy-from-modish" or page.handle == "buddha-buddhism-inspired-products-hand-palm-buddha-chair-head-busts" %}
+  
+<link rel="stylesheet" href="{{ 'buyingGuide2-by-tez.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'buyingGuide2-by-tez.css' | asset_url | stylesheet_tag }}</noscript>
+
+{% else %}
+<!--   for pages:  page.handle == "/pages/15-top-flexible-storage-benches-for-all-your-rooms" or page.handle == "/pages/10-bestselling-bar-stools-counter-chairs-to-make-the-most-of-your-counter-space" or page.handle == "/pages/how-to-choose-the-perfect-bar-counter-stool-height -->
+  
+<link rel="stylesheet" href="{{ 'pagestyle-by-tez.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'pagestyle-by-tez.css' | asset_url | stylesheet_tag }}</noscript>
+  
+{% endif %}
+<!--  Tejashwani -->
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width section-{{ section.id }}-padding">
+<!-- <div class="page-width page-width--narrow section-{{ section.id }}-padding"> -->
+  <h2 class="main-page-title page-title">
+    {{ page.title | escape }}
+  </h2>
+   {% comment %}{%if page.handle== "modish-trade-programs-for-modish-dawn" or page.handle == "contact-us" or page.handle == "trade-programs" %}
+     <h2 class="link" style="text-align:center;">Here are our contact details. You can reach us via email, chat or phone as needed. Or fill out the contact form below.</h2>
+     {%endif%}
+     {% endcomment %}
+ 
+<div class="rte"
+   {% if page.handle == "driftwood-furniture-decor-lighting" or page.handle=="vegan-leather-bonded-leather-the-all-weather-alt-leathers"%}
+  style="background: white;"
+  {% endif %}
+  >
+{% comment %} Tejashwani condition for trade template and contact us page  {% endcomment %}
+
+{%if page.handle== "modish-trade-programs-for-modish-dawn" or page.handle == "contact-us" or page.handle == "trade-programs" %}    
+                <div class="row">
+                    <div class="col-md-8 col-sm-6 col-xl-6"> {{ page.content }}</div>
+                        {%if page.handle== "modish-trade-programs-for-modish-dawnhh" or page.handle == "contact-us" %}
+                    	<div class="col-md-4 col-sm-6 col-xl-6">
+                    		<div class="contact-form">
+                    			<div id="wufoo-z4efban1d8pt2u"> Fill out my <a href="https://modishhomegarden.wufoo.com/forms/z4efban1d8pt2u">online form</a>. </div> <script type="text/javascript"> var z4efban1d8pt2u; (function(d, t) { var s = d.createElement(t), options = { 'userName':'modishhomegarden', 'formHash':'z4efban1d8pt2u', 'autoResize':true, 'height':'580', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { z4efban1d8pt2u = new WufooForm(); z4efban1d8pt2u.initialize(options); z4efban1d8pt2u.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>
+                             </div> 
+                    	</div>
+                    	{%endif%}
+                    	{%if page.handle== "modish-trade-programs-for-modish-dawn" or page.handle == "trade-programs" %}
+                    	<div class="col-md-4 col-sm-6 col-xl-6">
+                    		 <div id="wufoo-s1x6n40j0i6zjs4"> Fill out my <a href="https://modishhomegarden.wufoo.com/forms/s1x6n40j0i6zjs4">online form</a>. </div> <script type="text/javascript"> var s1x6n40j0i6zjs4; (function(d, t) { var s = d.createElement(t), options = { 'userName':'modishhomegarden', 'formHash':'s1x6n40j0i6zjs4', 'autoResize':true, 'height':'1028', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { s1x6n40j0i6zjs4 = new WufooForm(); s1x6n40j0i6zjs4.initialize(options); s1x6n40j0i6zjs4.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>
+                        </div>
+                    	{%endif%}
+                
+                </div>
+
+{%- else -%}
+         {{ page.content }}
+{%- endif -%}
+
+      
+
+    
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

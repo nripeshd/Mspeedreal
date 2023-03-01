@@ -1,0 +1,84 @@
+<h2 class="related-products inventory h4 accordion__title">Related Products</h2>
+<div class="relatedProductDiv">
+  <div class="row">
+      {%assign counter = 1%}
+      {%assign counterb = 1%}
+      {% assign productArr = '' %}
+      {% assign productHandleArr = '' %} 
+      {% assign productImgArr = '' %} 
+      {% assign productUrlArr = '' %} 
+      {% assign productHandleArr1 = '' %} 
+        {% assign product_handle_string = product.handle%}
+          {% for collectiona in product.collections %} 
+             {%if counter < 3%}
+                   	{% for producta in collectiona.products %} 
+                            {%if counter > 3%}{% break %}{% endif %}
+                            {%if producta.type==product.type and producta.vendor==product.vendor and producta.available and producta.handle != product.handle%}      
+                              {% if productHandleArr1 contains producta.handle %}{% continue %}{% endif %}
+                              {% assign productHandleArr1 = productHandleArr1 | append: producta.handle | append:"," %}
+                            
+                              <div class="col-12 relatedProductDivChild">
+                                 <a href="{{ producta.url }}">
+                                   <img src= "{{ producta.images[0].src | img_url: "medium"  }}" alt="{{ producta.title }}" class="relatedProductImg"/>
+                                    {{ producta.title | truncate:40 }}    
+                                 </a>
+                               </div>
+                              {% assign counter=counter | plus:1 %}    
+                             {% comment %} {%- assign product_handle_string = product_handle_string| append: producta.handle -%}{% endcomment %}
+                            {%endif%}  
+                       
+                      {%if counterb < 4%}
+                        {%if producta.type==product.type and producta.available and producta.handle != product.handle%} 
+                            {% if productHandleArr contains producta.handle %}{% continue %}{% endif %}
+                            {% assign productHandleArr = productHandleArr | append: producta.handle | append:"," %}
+                            {% assign productArr = productArr | append: producta.title | append:"," %}
+                              {% assign imgsrc = producta.images[0].src | img_url: "medium"   %}
+                            {% assign productImgArr = productImgArr | append: imgsrc | append:"," %}
+                            {% assign productUrlArr = productUrlArr | append: producta.url | append:"," %}
+                        {% assign counterb=counterb | plus:1 %} 
+                        {% endif %}
+                      {% endif %}
+                	{% endfor %}
+           {% endif %}
+            {%if counter > 3%}{% break %}{% endif %}
+      	{% endfor %}
+   {%if counter == 1%}
+     
+      {% assign productHandleArr = productHandleArr | split: "," %}
+      {% assign productArr = productArr | split: "," %}
+      {% assign productImgArr = productImgArr | split: "," %}
+      {% assign productUrlArr = productUrlArr | split: ","  %}
+     {% for i in (0..2) %}
+       <div class="col-12 relatedProductDivChild">
+         <a href="{{ productUrlArr[i] }}">
+           <img src= "{{ productImgArr[i]}}" alt="{{ productArr[i] }}" class="relatedProductImg"/>
+            {{ productArr[i] | truncate:40 }}    
+         </a>
+       </div>
+    {% endfor %}
+   {% endif %}
+
+  </div>
+</div>
+<style>
+  .related-products{
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+  
+  .relatedProductDiv{
+    text-align: center;
+    
+  }
+  .relatedProductImg{
+/*     height: 145px; */
+        height: 100%;
+    border: 2px solid #e8d38a;
+    width: 100%;
+/* 
+    margin-bottom:10px; */
+  }
+  .relatedProductDivChild{
+    margin-bottom:10px; 
+  }
+</style>

@@ -1,0 +1,109 @@
+.page-background {
+  background: white;
+  padding: 2%;
+  margin-bottom: 6%;
+  box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 50%);
+}
+.page-heading {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+}
+.black-btn {
+  /* position: relative; */
+  vertical-align: middle;
+  padding: 2% !important;
+  /* pointer-events: none; */
+  line-height: 51px !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  background-color: #211e22;
+  color: #fff !important;
+}
+
+.round_btn {
+  background: #ccc;
+  padding: 5px 15px;
+  display: inline-block;
+  border-radius: 20px;
+  color: #000;
+  margin-bottom: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 8px;
+  text-decoration: none !important;
+  color: black !important;
+}
+/*  end: for buying guide pages */
+.padding {
+  padding: 5px;
+}
+/* start: for about us page  */
+
+.imgContainer {
+  display: flex;
+  max-width: 100%;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.imgContainer img {
+  width: 100%;
+  min-height: 100%;
+}
+/* end: for about us page  */
+/* start:  why shp modish store */
+.sideimage {
+  float: left;
+  margin: 0.5em 0;
+  padding-right: 10px;
+  user-select: auto;
+  width: 105px;
+  transition: transform 0.4s;
+}
+.sideimage:hover {
+  transform: scale(1.2);
+  transform-origin: 50% 50%;
+}
+/* end:  why shp modish store */
+/*  */
+.title-css {
+  color: #221f1f;
+  text-transform: capitalize;
+  background-color: #f2f2f2;
+  /* color: #636363; */
+  font-size: 24px;
+  font-weight: 700;
+  padding: 7px;
+  text-align: center;
+}
+.alink {
+  color: var(--link-color);
+  text-decoration: var(--text-link-decoration);
+  text-underline-position: under;
+}
+.ques {
+  /* padding: 10px; */
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 0;
+  background-color: #f3f3f3;
+  padding: 7px 15px 7px 15px;
+  cursor: pointer;
+  position: relative;
+  text-transform: initial;
+}
+
+/*  */
+
+.title-css {
+  color: #221f1f;
+  text-transform: capitalize;
+  background-color: #f2f2f2;
+  font-size: 24px;
+  font-weight: 800;
+  padding: 7px;
+  text-align: center;
+}

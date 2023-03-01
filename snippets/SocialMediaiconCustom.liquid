@@ -1,0 +1,35 @@
+<div class="social-sharing">
+  <ul class="list-social">
+    <li class="list-social__item">
+      <a
+        class="list-social__link"
+        target="_blank"
+        href="//www.facebook.com/sharer.php?u={{ shop.url | append: product.url }}"
+      >
+        {%- render 'icon-facebook' -%}
+      </a>
+    </li>
+    <li class="list-social__item">
+      <a
+        class="list-social__link"
+        target="_blank"
+        href="//twitter.com/share?text={{ product.title | url_param_escape }}&amp;url={{ shop.url | append: product.url }}"
+        class="btn--share share-twitter"
+      >
+        {%- render 'icon-twitter' -%}
+      </a>
+    </li>
+    <li class="list-social__item">
+      <a
+        class="list-social__link"
+        target="_blank"
+        href="//pinterest.com/pin/create/button/?url={{ shop.url | append: product.url }}&amp;media={{ product | img_url: '1024x1024' }}&amp;description={{ product.title | url_param_escape }}"
+        class="btn--share share-pinterest"
+      >
+        {%- render 'icon-pinterest' -%}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- .social-icons{ display:flex; list-style: none; } .social-icon_items{ padding-left: 1%; padding-right: 1%; } -->

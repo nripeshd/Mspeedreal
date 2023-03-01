@@ -1,0 +1,29 @@
+
+{% comment %}-----------Shipping Text and OrderNote----------------------------------------------------------------------------{% endcomment %}             
+{%- assign selected_variant = product.selected_or_first_available_variant -%}
+{% assign _ordernote ='' %}
+{% if selected_variant.inventory_management %}
+      {% if selected_variant.inventory_quantity <= -300 %}
+          <span class="inventory1" id="inventory1">Sold Out</span>               
+       {%else%}
+          {% if selected_variant.inventory_quantity > 0 %} 
+            {% assign fromDays = 7 | times: 86400 %}
+            {% assign toDays = 12 | times: 86400 %}
+            {%assign start_date="now" | date: "%s" | plus: fromDays | date: "%b %d" %}
+            {%assign end_date="now" | date: "%s" | plus: toDays | date: "%b %d, %Y" %}
+            <span class="inventory1" id="inventory1"><b>In Stock:</b><br>Ships by {{ start_date }} - {{ end_date }}.</span>
+          {%else%}
+              {% assign Dated = selected_variant.inventory_quantity | abs %}    
+              {% assign fromDays = Dated| plus: 7 | times: 86400 %}
+              {% assign toDays =  Dated| plus: 12 | times: 86400 %}
+              {%assign start_date="now" | date: "%s" | plus: fromDays | date: "%b %d" %}
+              {%assign end_date="now" | date: "%s" | plus: toDays | date: "%b %d, %Y" %}             
+              <span class="inventory1" id="inventory1">Ships by {{ start_date }} - {{ end_date }}.</span>                       
+          {%endif%}   			
+      {% endif %}
+<!--           management else -->
+{% else %}
+    <span class="inventory1" id="inventory1">Sold out</span>               
+   <!--    management endif -->    
+{% endif %}
+<!--      End Shipping by theme  -->

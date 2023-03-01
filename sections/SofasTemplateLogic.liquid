@@ -1,0 +1,883 @@
+<section data-section-id="{{ section.id }}" data-section-type="collection">
+  <div class="container container--flush">
+    
+
+<!--     Sections added new 9/9/2022 Start -->
+      
+{%- assign productTypeFlag = true -%}
+{%- assign materialFlag = true -%}
+{%- assign colorFlag = true -%}
+{%- assign priceFlag = true -%}
+{%- assign ourTrends = false -%}
+{%- assign shapeFlag = false -%}
+{%- assign sizeFlag = false -%}
+
+{% assign handle = collection.handle %}
+{% case handle %}
+  
+  {% when "trays" %}
+        {%- assign shapeFlag = true -%}
+  {%- assign productTypeFlag = false -%}
+        {%- assign sizeFlag = false -%}
+        {%- assign priceFlag = false -%}
+  {%- assign colorFlag = false -%}
+        {%- assign pageHeading = "Trays  " -%}
+        {%- assign pageHeadingLink = "/collections/trays " -%}
+        {%- assign pageHeadingPara = "Stylish | Sustainable | Living" -%}
+       
+        {%- assign pageHeadingMaterialLink = "/collections/trays-by-material" -%}
+		{% assign shapeHeading = "Mirrors" %}
+        {% assign shapeProductHeading = 'Rectangle Trays,Square Trays,Round Trays'| split: ',' %}
+        {% assign shapeProductImg = "https://cdn.shopify.com/s/files/1/0236/1829/products/399614_1_400x.jpg?v=1653913403,https://cdn.shopify.com/s/files/1/0236/1829/products/06009_99593a79-ea0c-45af-b8f9-6f640f8d432b_400x.jpg?v=1639139428,https://cdn.shopify.com/s/files/1/0236/1829/products/397906_1_400x.jpg?v=1653913316" | split: ',' %}
+        {% assign shapeProductLink ="https://www.modishstore.com/collections/rectangle-trays,https://www.modishstore.com/collections/square-trays,https://www.modishstore.com/collections/rounds-trays" | split: ',' %}
+        
+        {% assign materialBlock1 = "/collections/metal-trays, Metal Trays,https://cdn.shopify.com/s/files/1/0236/1829/products/CQ6936-hr_400x.jpg?v=1633092751" | split: ','  %}
+       
+
+	   {% assign materialBlock2 = "/collections/wood-trays,Wood Trays,https://cdn.shopify.com/s/files/1/0236/1829/products/47325_835bad20-b4fa-41bc-8d12-42e43f05b8f2_300x.jpg?v=1495516723" | split: ','  %}
+       
+
+	   {% assign materialBlock3 = "/collections/rattan-trays,Rattan Trays,https://cdn.shopify.com/s/files/1/0236/1829/products/319_400x.gif?v=1630493589" | split: ','  %}
+        {% assign materialBlock4 = "/collections/glass-trays,Glass Trays,https://cdn.shopify.com/s/files/1/0236/1829/products/ACC_102871_18770_B_400x.jpg?v=1623838590" | split: ','  %}
+       
+
+	   {% assign materialBlock5 = ",," | split: ','  %}
+
+        {%- assign ourTrends = false -%}
+
+  {% when "mirrors" %}
+        {%- assign shapeFlag = true -%}
+        {%- assign sizeFlag = true -%}
+        {%- assign priceFlag = false -%}
+        {%- assign pageHeading = "Mirrors " -%}
+        {%- assign pageHeadingLink = "/collections/mirrors" -%}
+        {%- assign pageHeadingPara = "Stylish | Sustainable | Living" -%}
+        {%- assign pageHeadingColorLink = "/collections/mirrors-by-color" -%}
+        {%- assign pageHeadingMaterialLink = "/collections/mirrors-by-material" -%}
+		{% assign sizeHeading = "Mirrors" %}
+        {% assign sizeProductHeading = 'Mirror Size Small (Under 20" Height),Mirror Size Medium (20"- 40" Height),Mirror Size Large (40"- 60" Height),Mirror Oversized (Over 60" Height)'| split: ',' %}
+        {% assign sizeProductImg = "https://cdn.shopify.com/s/files/1/0236/1829/products/Untitled-1_c89f2422-8d5c-4f50-a989-54e86d06a325_400x.jpg?v=1630126502,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/CCG1434_-_SET_OF_2_ARCHED_WINDOW_MIRRORS_0f78aebf-e95d-4e50-972f-6e06f42d6922_400x.jpg?v=1633090687,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/CMI1007A-ROOM_400x.jpg?v=1664604476,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/BM159251_400x.jpg?v=1646718915" | split: ',' %}
+        {% assign sizeProductLink ="/collections/mirror-size-small-under-20-height,/collections/mirror-size-medium-20-40-height,/collections/mirror-size-large-40-60-height,/collections/mirror-oversized-over-60-height" | split: ',' %}
+        {% assign shapeHeading = "Mirrors" %}
+        {% assign shapeProductHeading = 'Rectangle Mirrors,Round Mirrors,Square Mirrors,Oval Mirrors,Arched Mirrors,Sunburst Mirrors,Window Pane,Octagon Mirrors,Hexagon Mirrors'| split: ',' %}
+        {% assign shapeProductImg = "https://cdn.shopify.com/s/files/1/0236/1829/products/asl104_1_400x.jpg?v=1532602285,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/MIR_20384_09491B_400x.jpg?v=1646288137,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/MIR_15042_13808B_400x.jpg?v=1646298772,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/51009_400x.jpg?v=1616664690,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/CCG1434_-_SET_OF_2_ARCHED_WINDOW_MIRRORS_0f78aebf-e95d-4e50-972f-6e06f42d6922_400x.jpg?v=1633090687,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/10116-02_400x.jpeg?v=1495511300,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/166_90532_ea315664-288f-41ea-83dc-06810176fddc_400x.jpg?v=1655111657,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/MIR_20749_09569A1_400x.jpg?v=1646288648,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/BM219879_5_400x.jpg?v=1648272317" | split: ',' %}
+        {% assign shapeProductLink ="https://www.modishstore.com/collections/rectangle-mirrors,
+https://www.modishstore.com/collections/round-mirrors,
+https://www.modishstore.com/collections/square-mirrors,
+https://www.modishstore.com/collections/oval-mirrors,
+https://www.modishstore.com/collections/arched-mirrors,
+https://www.modishstore.com/collections/sunburst-mirrors,
+https://www.modishstore.com/collections/window-pane,
+https://www.modishstore.com/collections/octagon-mirrors,
+https://www.modishstore.com/collections/hexagon-mirrors" | split: ',' %}
+        
+  
+        {% assign productTypeHeading = "Decorative Mirrors,Wall Mirrors,Leaning / Floor Mirrors,Bathroom / Vanity Mirrors, Makeup / Shaving Mirrors" | split: ',' %}
+        {% assign productTypeImg = "https://cdn.shopify.com/s/files/1/0236/1829/collections/she102-s3_1_grande_969a8a36-e9ca-4a55-86ef-f520d82c1c4b.jpg?v=1601373976,https://cdn.shopify.com/s/files/1/0236/1829/collections/NBF2074-Kalalou_Round_Wooden_Antique_Shoe_Mold_Mirror-2_grande_5bd6fbb1-2a9a-40d9-bc79-2af47ef77972.jpg?v=1601374021,https://cdn.shopify.com/s/files/1/0236/1829/collections/9510-5_6_400x_0bdaadd2-4baa-48d2-bff0-dc9785f16001.jpg?v=1638185265,https://cdn.shopify.com/s/files/1/0236/1829/collections/ATC121_400x_84dc3719-56a5-4f2a-8d44-194b3c59edeb.jpg?v=1638185310,https://cdn.shopify.com/s/files/1/0236/1829/collections/51089_400x_da221412-d56f-4fa5-b22c-0108ab041224.jpg?v=1638185379"  | split: ','%}
+        {% assign productTypeLink = "/collections/decorative-mirrors,/collections/wall-mirrors,/collections/leaning-floor-mirrors,/collections/bathroom-vanity-mirrors,/collections/makeup-shaving-mirrors"  | split: ','%}
+          
+        {% assign productColorHeading = "Black Mirrors,Brown Mirrors,White Mirrors,Gray Mirrors,Blue Mirrors,Silver Mirrors" | split: ',' %}
+        {% assign productColorHexCode = "#000,#663d1c,#cfd0cc69,#2f2f2f73,#529ed1,#c0c0c0 " | split: ',' %}
+        
+        {% assign productColorLink = "/collections/black-mirrors,/collections/brown-mirrors,/collections/white-mirrors,/collections/gray-mirrors,/collections/blue-mirrors,/collections/silver-mirrors
+        "| split: ',' %}
+      
+	  
+        {% assign materialBlock1 = "/collections/wood-mirrors, Wood Mirrors,https://cdn.shopify.com/s/files/1/0236/1829/products/166_117321_0ef3a7b8-a44c-46f7-912c-84c9c1ae2b35_400x.jpg?v=1655112083" | split: ','  %}
+       
+
+	   {% assign materialBlock2 = "/collections/metal-mirrors,Metal Mirrors,https://cdn.shopify.com/s/files/1/0236/1829/products/MIR_18129_09046C_300x.jpg?v=1646215125" | split: ','  %}
+       
+
+	   {% assign materialBlock3 = "/collections/mdf-mirrors,MDF Mirrors,https://cdn.shopify.com/s/files/1/0236/1829/products/2137_400x.jpg?v=1495655586" | split: ','  %}
+        {% assign materialBlock4 = "/collections/rattan-mirrors,Rattan Mirrors,https://cdn.shopify.com/s/files/1/0236/1829/products/166_127561_36bca992-dff3-4b32-930b-3b8338763e0d_400x.jpg?v=1655112654" | split: ','  %}
+       
+
+	   {% assign materialBlock5 = ",," | split: ','  %}
+
+        {%- assign ourTrends = false -%}
+
+  
+    {% when "modular-sofas" %}
+        {%- assign productTypeFlag = false -%}
+        {%- assign pageHeading = "Modular Sofas" -%}
+        {%- assign pageHeadingLink = "/collections/modular-sofas" -%}
+        {%- assign pageHeadingPara = "Stylish | Sustainable | Living" -%}
+        {%- assign pageHeadingColorLink = "/collections/modular-sofas-by-color" -%}
+        {%- assign pageHeadingMaterialLink = "/collections/modular-sofas-by-material" -%}
+        {% assign priceHeading = "Modular Sofas" %}
+        {% assign priceProductHeading = "Modular Under 1000$,
+                                          Modular $1000-$1500,
+                                          Modular $1500-$2000,
+                                          Modular over $2000" | split: ',' %}
+        {% assign priceProductImg = "
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/mint-modway-loveseats-eei-3989-min-31_1000-min_400x_c797fc16-392a-43fe-9997-fb8729a7eba8.webp?v=1663324144,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/dusty-rose-modway-loveseats-eei-4131-dus-31_1000-min_400x_46637ea0-69ea-49c5-a28e-4c32c402e983.webp?v=1663324175,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3354-WHI_6_400x_87d74d7e-ca2f-44dd-a075-cb099a52909b.webp?v=1663324204,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3358-WHI_10_400x_262981e9-d5e3-4ae7-87cb-646a0492b28c.webp?v=1663324232" | split: ',' %}
+        {% assign priceProductLink ="https://www.modishstore.com/collections/modular-under-1000,
+          https://www.modishstore.com/collections/modular-1000-1500,
+          https://www.modishstore.com/collections/modular-1500-2000,
+          https://www.modishstore.com/collections/modular-over-2000
+                                      " | split: ',' %}
+        {% assign productColorHeading = "Black Modular Sofas,
+                                        Gray Modular Sofas,
+                                        Blue Modular Sofas,
+                                        Beige Modular Sofas,
+                                        White Modular Sofas
+                                        " | split: ',' %}
+        {% assign productColorHexCode = "#000,#2f2f2f73,#529ed1,#b2a894,#cfd0cc69" | split: ',' %}
+        
+        {% assign productColorLink = "/collections/black-modular-sofas,
+        /collections/gray-modular-sofass,
+       /collections/blue-modular-sofas,
+       /collections/beige-modular-sofas,
+        /collections/white-modular-sofas
+        "| split: ',' %}
+        {% assign materialBlock1 = "/collections/velvet-modular-sofas,Velvet Modular Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3988-DUS_1.jpg?v=1656068522" | split: ','  %}
+        {% assign materialBlock2 = "/collections/leather-modular-sofas,Leather Modular Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3733-GRY_1_-min.jpg?v=1614055611" | split: ','  %}
+        {% assign materialBlock3 = "/collections/fabric-modular-sofas,Fabric Modular Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3881-AZU_5_-min.jpg?v=1628164852" | split: ','  %}
+        {% assign materialBlock4 = "/collections/upholstered-sofas,Upholstered Modular Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-1180-LAG_1.jpg?v=1656046043" | split: ','  %}
+        {% assign materialBlock5 = "/collections/tufted-modular-sofas,Tufted Modular Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3351-NAV_1.jpg?v=1628317827" | split: ','  %}
+
+  
+    {% when "loveseats" %}
+        {%- assign productTypeFlag = false -%}
+        {%- assign pageHeading = "Loveseats " -%}
+        {%- assign pageHeadingLink = "/collections/loveseats" -%}
+        {%- assign pageHeadingPara = "Stylish | Sustainable | Living" -%}
+        {%- assign pageHeadingColorLink = "/collections/loveseat-by-color" -%}
+        {%- assign pageHeadingMaterialLink = "/collections/loveseats-by-material" -%}
+        {% assign priceHeading = "Loveseats " %}
+        {% assign priceProductHeading = "Loveseat Under $700,
+                                        Loveseat Under $1000,
+                                        Loveseat $1000-$1500,
+                                        Loveseat $1500-$2000,
+                                        Loveseat over $2000" | split: ',' %}
+        {% assign priceProductImg = "
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/mint-modway-loveseats-eei-3989-min-31_1000-min_400x_c797fc16-392a-43fe-9997-fb8729a7eba8.webp?v=1663324144,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/dusty-rose-modway-loveseats-eei-4131-dus-31_1000-min_400x_46637ea0-69ea-49c5-a28e-4c32c402e983.webp?v=1663324175,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3354-WHI_6_400x_87d74d7e-ca2f-44dd-a075-cb099a52909b.webp?v=1663324204,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/LCRE2GR_LS.jpg?v=1645417697,
+         https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-2534-BLU_4.jpg?v=1630067028" | split: ',' %}
+        {% assign priceProductLink ="https://www.modishstore.com/collections/loveseat-under-700,
+                                      https://www.modishstore.com/collections/loveseat-under-1000,
+                                      https://www.modishstore.com/collections/sectionals-1000-1501,
+                                      https://www.modishstore.com/collections/loveseat-1500-2000,
+                                      https://www.modishstore.com/collections/loveseat-over-2000
+                                      " | split: ',' %}
+       
+        {% assign productColorHeading = "Black Loveseat Sofas,
+                                        Gray Loveseat Sofas,
+                                        Blue Loveseat Sofas,
+                                        Beige Loveseat Sofas,
+                                        White Loveseat Sofas
+                                        " | split: ',' %}
+
+  
+        {% assign productColorHexCode = "#000,#2f2f2f73,#529ed1,#b2a894,#cfd0cc69" | split: ',' %}
+        
+        {% assign productColorLink = "/collections/black-loveseat-sofas,
+        /collections/gray-loveseat-sofas,
+       /collections/blue-loveseat-sofas,
+       /collections//beige-loveseat-sofas,
+        /collections/white-loveseat-sofas
+        "| split: ',' %}
+        {% assign materialBlock1 = "/collections/velvet-loveseat-sofas,Velvet Loveseat Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/s40-3_75738_arvada_pink_5-1-2019_hr_01.jpg?v=1634038890" | split: ','  %}
+        {% assign materialBlock2 = "/collections/leather-loveseat-sofas,Leather Loveseat Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/329708_1.jpg?v=1652861237" | split: ','  %}
+        {% assign materialBlock3 = "/collections/fabric-loveseat-sofas,Fabric Loveseat Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-2972-GRY-SET_1.jpg?v=1624877265" | split: ','  %}
+        {% assign materialBlock4 = "/collections/upholstered-loveseat-sofas,Upholstered Loveseat Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-1179-CIT_1.jpg?v=1656046390" | split: ','  %}
+        {% assign materialBlock5 = "/collections/tufted-loveseats,Tufted Loveseat Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/367_0cbdirjd0wxsegis0rjauc.jpg?v=1641972797" | split: ','  %}
+    
+  {% when "sofas-chaise" %}
+  {%- assign productTypeFlag = false -%}
+   {%- assign pageHeading = "Chaise Sofas" -%}
+        {%- assign pageHeadingLink = "/collections/sofas-chaise" -%}
+        {%- assign pageHeadingPara = "Stylish | Sustainable | Living" -%}
+        {%- assign pageHeadingColorLink = "/collections/chaise-sofas-by-color" -%}
+        {%- assign pageHeadingMaterialLink = "/collections/chaise-sofas-by-material" -%}
+        {% assign priceHeading = "Chaise Sofa" %}
+        {% assign priceProductHeading = "Chaise Under 1000$,
+                                        Chaise $1000-$1500,
+                                        Chaise $1500-$2000,
+                                        Chaise over $2000
+                                                  " | split: ',' %}
+        {% assign priceProductImg = "https://cdn.shopify.com/s/files/1/0236/1829/products/fox6284c-room.jpg?v=1664013734,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/358_8942022blifestyle.jpg?v=1657689172,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/358_89640.jpg?v=1657600573,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/358_89628be.jpg?v=1657604714
+          " | split: ',' %}
+        {% assign priceProductLink ="https://www.modishstore.com/collections/chaise-under-1000,
+                                      https://www.modishstore.com/collections/chaise-1000-1500,
+                                      https://www.modishstore.com/collections/chaise-1500-2000,
+                                      https://www.modishstore.com/collections/chaise-over-2000
+                                      " | split: ',' %}
+       
+        {% assign productColorHeading = "Black Chaise Sofas,
+                                        Gray Chaise Sofas,
+                                        Blue Chaise Sofas,
+                                        Beige Chaise Sofas,
+                                        White Chaise Sofas
+                                        " | split: ',' %}
+        {% assign productColorHexCode = "#000,#2f2f2f73,#529ed1,#b2a894,#cfd0cc69" | split: ',' %}
+        
+        {% assign productColorLink = "/collections/black-chaise-sofas,
+        /collections/gray-chaise-sofas,
+       /collections/blue-chaise-sofas,
+       /collections/beige-chaise-sofas,
+        /collections/white-chaise-sofas
+        "| split: ',' %}
+  
+        {% assign materialBlock1 = "/collections/velvet-chaise-sofas,Velvet Chaise Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/358_89741gnwhitebackground.jpg?v=1657600804" | split: ','  %}
+        {% assign materialBlock2 = "/collections/leather-chaise-sofas,Leather Chaise Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/283598_2.jpg?v=1652691030" | split: ','  %}
+        {% assign materialBlock3 = "/collections/fabric-chaise-sofas,Fabric Chaise Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/11025-1.jpg?v=1625208295" | split: ','  %}
+        {% assign materialBlock4 = "/collections/upholstered-chaise-sofas,Upholstered Chaise Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/9742-1.jpg?v=1624876746" | split: ','  %}
+        {% assign materialBlock5 = "/collections/wood-chaise-sofas,Wood Chaise Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/166_116671_a185b605-ef7a-41b9-81bb-91712bb242a2.jpg?v=1655191958" | split: ','  %}
+       
+  {% when "sofas" %}
+  {%- assign productTypeFlag = false -%}
+  {%- assign colorFlag = false -%}
+        {%- assign pageHeading = "Sofas" -%}
+        {%- assign pageHeadingLink = "/collections/sofas" -%}
+        {%- assign pageHeadingPara = "Stylish | Sustainable | Living" -%}
+        {%- assign pageHeadingColorLink = "/collections/sofas" -%}
+        {%- assign pageHeadingMaterialLink = "/collections/sofas" -%}
+        {% assign priceHeading = "Sofas" %}
+        {% assign priceProductHeading = "Sofas Less Than 500$,
+          Sofas 500$ To 1000$,
+          Sofas 1000$ To 1500$,
+          Sofas 1500$ To 2000$,
+          Sofas 2000$+" | split: ',' %}
+        {% assign priceProductImg = "
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/mint-modway-loveseats-eei-3989-min-31_1000-min_400x_c797fc16-392a-43fe-9997-fb8729a7eba8.webp?v=1663324144,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/dusty-rose-modway-loveseats-eei-4131-dus-31_1000-min_400x_46637ea0-69ea-49c5-a28e-4c32c402e983.webp?v=1663324175,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3354-WHI_6_400x_87d74d7e-ca2f-44dd-a075-cb099a52909b.webp?v=1663324204,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3358-WHI_10_400x_262981e9-d5e3-4ae7-87cb-646a0492b28c.webp?v=1663324232,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3921-DUS_7_-min_400x_1.webp?v=1663324263" | split: ',' %}
+        {% assign priceProductLink ="https://www.modishstore.com/collections/sofas-less-than-500,
+                                    https://www.modishstore.com/collections/sofas-500-to-1000,
+                                    https://www.modishstore.com/collections/sofas-1000-to-1500,
+                                    https://www.modishstore.com/collections/sofas-1500-to-2000,
+                                    https://www.modishstore.com/collections/sofas-2000
+                                      " | split: ',' %}
+       
+        {% assign materialBlock1 = "/collections/velvet-sofas,Velvet Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3988-DUS_1.jpg?v=1656068522" | split: ','  %}
+        {% assign materialBlock2 = "/collections/leather-sofas,Leather Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3733-GRY_1_-min.jpg?v=1614055611" | split: ','  %}
+        {% assign materialBlock3 = "/collections/fabric-sofas,Fabric Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3881-AZU_5_-min.jpg?v=1628164852" | split: ','  %}
+        {% assign materialBlock4 = "/collections/upholstered-sofas,Upholstered Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-1180-LAG_1.jpg?v=1656046043" | split: ','  %}
+        {% assign materialBlock5 = "/collections/tufted-sofas-sectionals,Tufted Sofas & Sectionals,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3351-NAV_1.jpg?v=1628317827" | split: ','  %}
+  
+  {% when "sofa-sets" %}  
+        {%- assign productTypeFlag = false -%}
+        {%- assign pageHeading = "Sofa Sets" -%}
+        {%- assign pageHeadingLink = "/collections/sofa-sets" -%}
+        {%- assign pageHeadingPara = "Stylish | Sustainable | Living" -%}
+        {%- assign pageHeadingColorLink = "/collections/sofa-sets-by-color" -%}
+        {%- assign pageHeadingMaterialLink = "/collections/sofa-sets-by-material" -%}
+        {% assign priceHeading = "Sofa Sets" %}
+        {% assign priceProductHeading = "Sofas Sets Less under $500,
+          Sofa Sets $500 to $799,           
+            Sofa Sets $800- $1000,            
+            Sofa Sets above $1000 ,
+            Sofa Sets above $1500 
+          " | split: ',' %}
+        {% assign priceProductImg = "
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/mint-modway-loveseats-eei-3989-min-31_1000-min_400x_c797fc16-392a-43fe-9997-fb8729a7eba8.webp?v=1663324144,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/dusty-rose-modway-loveseats-eei-4131-dus-31_1000-min_400x_46637ea0-69ea-49c5-a28e-4c32c402e983.webp?v=1663324175,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3354-WHI_6_400x_87d74d7e-ca2f-44dd-a075-cb099a52909b.webp?v=1663324204,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3358-WHI_10_400x_262981e9-d5e3-4ae7-87cb-646a0492b28c.webp?v=1663324232,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3921-DUS_7_-min_400x_1.webp?v=1663324263" | split: ',' %}
+        {% assign priceProductLink ="/collections/sofa-sets-under-500,
+                                      /collections/sofa-sets-500-to-799,
+                                      /collections/sofa-sets-800-1000,
+                                      /collections/sofa-sets-above-1000,
+                                      /collections/sofa-sets-above-1500
+                                      " | split: ',' %}
+        
+        {% assign productColorHeading = "Black Sofa Sets,
+                                        Gray Sofa Sets,
+                                        Blue Sofa Sets,
+                                        Beige Sofa Sets,
+                                        White Sofa Sets" | split: ',' %}
+        {% assign productColorHexCode = "#000,#2f2f2f73,#529ed1,#b2a894,#cfd0cc69,#7faca4" | split: ',' %}
+        
+       
+          
+        {% assign productColorLink = "/collections/black-sofa-sets,
+       /collections/gray-sofa-sets,
+        /collections/blue-sofa-sets,
+        /collections/beige-sofa-sets,
+          /collections/white-sofa-sets"| split: ',' %}
+      
+        {% assign materialBlock1 = "/collections/velvet-sofa-set,Velvet Sofa Sets,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3988-DUS_1.jpg?v=1656068522" | split: ','  %}
+        {% assign materialBlock2 = "/collections/leather-sofas-sets,Leather Sofa Sets,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3733-GRY_1_-min.jpg?v=1614055611" | split: ','  %}
+        {% assign materialBlock3 = "/collections/fabric-sofa-set,Fabric Sofa Sets,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3881-AZU_5_-min.jpg?v=1628164852" | split: ','  %}
+        {% assign materialBlock4 = "/collections/upholstered-sofa-set,Upholstered Sofa Sets,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-1180-LAG_1.jpg?v=1656046043" | split: ','  %}
+        {% assign materialBlock5 = "/collections/wood-sofa-set,Wood Sofa Sets,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3351-NAV_1.jpg?v=1628317827" | split: ','  %}
+       
+      
+  {% when "sofas-sectionals-chaise" %}
+        {%- assign pageHeading = "Sofas & Sectionals" -%}
+        {%- assign pageHeadingLink = "/collections/sofas-sectionals-chaise" -%}
+        {%- assign pageHeadingPara = "Stylish | Sustainable | Living" -%}
+        {%- assign pageHeadingColorLink = "/collections/sofas-sectionals-by-color" -%}
+        {%- assign pageHeadingMaterialLink = "/collections/sofas-sectionals-sofa-sets-by-material" -%}
+        {% assign priceHeading = "Sofa" %}
+        {% assign priceProductHeading = "Sofas Less Than $500,Sofas $500 To $1000,Sofas 1000$ To 1500$,Sofas 1500$ To 2000$,Sofas 2000$+" | split: ',' %}
+        {% assign priceProductImg = "
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/mint-modway-loveseats-eei-3989-min-31_1000-min_400x_c797fc16-392a-43fe-9997-fb8729a7eba8.webp?v=1663324144,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/dusty-rose-modway-loveseats-eei-4131-dus-31_1000-min_400x_46637ea0-69ea-49c5-a28e-4c32c402e983.webp?v=1663324175,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3354-WHI_6_400x_87d74d7e-ca2f-44dd-a075-cb099a52909b.webp?v=1663324204,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3358-WHI_10_400x_262981e9-d5e3-4ae7-87cb-646a0492b28c.webp?v=1663324232,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3921-DUS_7_-min_400x_1.webp?v=1663324263" | split: ',' %}
+        {% assign priceProductLink ="/collections/sofas-less-than-500,
+                                      /collections/sofas-500-to-1000,
+                                      /collections/sofas-1000-to-1500,
+                                      /collections/sofas-1500-to-2000,
+                                      /collections/sofas-2000
+                                      " | split: ',' %}
+        {% assign productTypeHeading = "Sofas,Sectional Sofas,Sofa Sets,Chaise Sofas,Loveseats,Futon,Recliners,Modular,Outdoor Sofas" | split: ',' %}
+        {% assign productTypeImg = "
+          https://cdn.shopify.com/s/files/1/0236/1829/products/WB-1004-19.jpg?v=1623392393,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-4824-COG_1.jpg?v=1621329278,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3149-BEI-SET_1.jpg?v=1628319300,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/358_89717front.jpg?v=1657694095,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/358_1_81370lfront_a002f165-486a-431f-8ac4-48d161d01526_300x.jpg?v=1657692073,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/183_tucsonframerusticwalnutfinishsuedenavymattresscopy.jpg?v=1658314393,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/166_124491.jpg?v=1651825471,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/QN-1025-01.jpg?v=1623391942,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3168-WHI-GRY-SET_1.jpg?v=1628319012
+          "  | split: ','%}
+        {% assign productTypeLink = "/collections/sofas,/collections/sofas-sectionals,/collections/sofa-sets,/collections/sofas-chaise,/collections/loveseats,/collections/futon,/collections/recliners,/collections/modular,/collections/outdoor-sofas-loveseats-sectionals"  | split: ','%}
+          
+        {% assign productColorHeading = "Black Sofas,
+                                        Gray Sofas,
+                                        Blue Sofas,
+                                        Beige Sofas,
+                                        White Sofas,
+                                        Green Sofas,
+                                        Cognac Sofas
+                                        " | split: ',' %}
+        {% assign productColorHexCode = "#000,#2f2f2f73,#529ed1,#b2a894,#cfd0cc69,#7faca4,#8a572e" | split: ',' %}
+        
+        {% assign productColorLink = "/collections/black-color-sofas-sectional-and-sofa-sets,
+        /collections/gray-color-sofas-sectional-and-sofa-sets,
+       /collections/blue-color-sofas-sectional-and-sofa-sets,
+       /collections/beige-color-sofas-sectional-and-sofa-sets,
+        /collections/white-color-sofas-sectional-and-sofa-sets,
+        /collections/green-color-sofas-sectional-and-sofa-sets
+          /collections/cognac-sectionals,
+        "| split: ',' %}
+      
+        {% assign materialBlock1 = "/collections/velvet-sofas,Velvet Sofas & Sectionals,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3988-DUS_1.jpg?v=1656068522" | split: ','  %}
+        {% assign materialBlock2 = "/collections/leather-sofas,Leather  Sofas & Sectionals,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3733-GRY_1_-min.jpg?v=1614055611" | split: ','  %}
+        {% assign materialBlock3 = "/collections/fabric-sofas,Fabric  Sofas & Sectionals,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3881-AZU_5_-min.jpg?v=1628164852" | split: ','  %}
+        {% assign materialBlock4 = "/collections/upholstered-sofas,Upholstered  Sofas & Sectionals,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-1180-LAG_1.jpg?v=1656046043" | split: ','  %}
+        {% assign materialBlock5 = "/collections/tufted-sofas-sectionals,Tufted Sofas & Sectionals,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-3351-NAV_1.jpg?v=1628317827" | split: ','  %}
+
+        {%- assign ourTrends = true -%}
+        {% assign ourTrendsHeading = "The Ultimate Guide to Vegan Leather Furniture,The Top 6 Leather Chairs from Artisan Living on ModishStore,Leather Furniture and Decor" | split: ',' %}
+        {% assign ourTrendsImg = "https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-4392-BLK-TAN_8_400x.jpg?v=1604391357,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/Untitled-6_400x.jpg?v=1603709355,
+          https://cdn.shopify.com/s/files/1/0236/1829/products/Roost-Padron-Bench_400x.jpg?v=1635141967
+          " | split: ',' %}
+        {% assign ourTrendsLink ="/pages/vegan-leather-bonded-leather-the-all-weather-alt-leathers,
+          /blogs/decor/the-top-6-leather-chairs-from-artisan-living-on-modish-store,
+          /pages/buy-leather-furniture-decor-chairs" | split: ',' %}
+      
+    {% when "sofas-sectionals-sofa-sets" %}
+        {%- assign productTypeFlag = false -%}
+        {%- assign pageHeading = "Sectional Sofas" -%}
+        {%- assign pageHeadingLink = "/collections/sofas-sectionals" -%}
+        {%- assign pageHeadingPara = "Stylish | Sustainable | Living" -%}
+        {%- assign pageHeadingColorLink = "" -%}
+        {%- assign pageHeadingMaterialLink = "" -%}
+        {% assign priceHeading = "Sectional Sofas" %}
+        {% assign priceProductHeading = "Sectionals Under $700,
+                                          Sectionals Under $1000,
+                                          Sectionals $1000- $1500,
+                                          Sectionals $1500- $2000,
+                                          Sectionals above $2000
+                                          " | split: ',' %}
+
+
+      {% assign priceProductLink ="/collections/sectionals-under-500,
+                                    /collections/sectionals-under-1000,
+                                    /collections/sectionals-1000-1500,
+                                    /collections/sectionals-1500-2000,
+                                    /collections/sectionals-above-2000,
+                                    " | split: ','
+                                    %}
+        {% assign priceProductImg = "
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/mint-modway-loveseats-eei-3989-min-31_1000-min_400x_c797fc16-392a-43fe-9997-fb8729a7eba8.webp?v=1663324144,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/dusty-rose-modway-loveseats-eei-4131-dus-31_1000-min_400x_46637ea0-69ea-49c5-a28e-4c32c402e983.webp?v=1663324175,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3354-WHI_6_400x_87d74d7e-ca2f-44dd-a075-cb099a52909b.webp?v=1663324204,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3358-WHI_10_400x_262981e9-d5e3-4ae7-87cb-646a0492b28c.webp?v=1663324232,
+          https://cdn.shopify.com/s/files/1/0236/1829/collections/EEI-3921-DUS_7_-min_400x_1.webp?v=1663324263" | split: ',' %}
+        
+        
+        {% assign productColorHeading = "Black Sectional Sofas,
+                                        Gray Sectional Sofas,
+                                        Blue Sectional Sofas,
+                                        Beige Sectional Sofas,
+                                        White Sectional Sofas" | split: ',' %}
+        {% assign productColorHexCode = "#000,#2f2f2f73,#529ed1,#b2a894,#cfd0cc69" | split: ',' %}
+        
+        {% assign productColorLink = "/collections/black-sectional-sofas,
+        /collections/gray-sectionals,
+        /collections/blue-sectional-sofas,
+        /collections/beige-sectional-sofas,
+        /collections/white-sectional-sofas
+        "| split: ',' %}
+      
+        {% assign materialBlock1 = "/collections/velvet-sectional-sofas,Velvet Sectional Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/358_87841gnfront.jpg?v=1657621420" | split: ','  %}
+        {% assign materialBlock4 = "/collections/leather-sectional-sofas,Leather Sectional Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/10468-1.jpg?v=1625029602" | split: ','  %}
+        {% assign materialBlock5 = "/collections/fabric-sectional-sofas,Fabric Sectional Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/72216_achen_blue_06-24-16_lr_02_dsc_6821_copy.jpg?v=1637146996" | split: ','  %}
+        {% assign materialBlock2 = "/collections/upholstered-sectional-sofas,Upholstered Sectional Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-1180-LAG_1.jpg?v=1656046043" | split: ','  %}
+        {% assign materialBlock3 = "/collections/tufted-sofas-sectionals,Tufted Sectional Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/284394_1.jpg?v=1652691355" | split: ','  %}
+       
+  {% else %}
+{% endcase %}
+
+
+<div style="background:#b9b19d;">
+    <div style="pageHeadingPara">
+      <header class="page__header--centered" style="    text-align: center;    padding: 1%;">
+        <h1 class="page__title heading bigger-heading">{{ pageHeading }}</h1>
+        <p style="color:white;margin:unset;">{{ pageHeadingPara }}</p>
+        <br>
+      </header>
+    </div>
+  
+</div>
+<br>
+
+{% if productTypeFlag == true %}
+    <div class="container">
+      <header class="section__header" style="justify-content:center !important">
+      <h2 class="section__title heading product-heading h3"><a href="{{ pageHeadingLink }}">Shop Top {{ priceHeading }} Collections by Product Type</a></h2>
+      </header>
+    </div>
+    <div class="collectionrow">
+    {% for producthead in productTypeHeading %}
+      <div class="collectioncolumn">
+         <a href="{{ productTypeLink[forloop.index0] }}"> 
+           <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ productTypeImg[forloop.index0] }}" alt="{{ producthead }}" style="width:100%">
+            <p class="product-heading">Shop All {{ producthead }}>
+      
+      
+      </p>
+         </a>
+      </div>
+      {% endfor %}
+    </div>
+    <br>
+{% endif %}
+{% assign materialBlock1 = "/collections/velvet-sectional-sofas,Velvet Sectional Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/358_87841gnfront.jpg?v=1657621420" | split: ','  %}
+        {% assign materialBlock2 = "/collections/leather-sectional-sofas,Leather Sectional Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/10468-1.jpg?v=1625029602" | split: ','  %}
+        {% assign materialBlock3 = "/collections/fabric-sectional-sofas,Fabric Sectional Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/72216_achen_blue_06-24-16_lr_02_dsc_6821_copy.jpg?v=1637146996" | split: ','  %}
+        {% assign materialBlock4 = "/collections/upholstered-sectional-sofas,Upholstered Sectional Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/EEI-1180-LAG_1.jpg?v=1656046043" | split: ','  %}
+        {% assign materialBlock5 = "/collections/tufted-sofas-sectionals,Tufted Sectional Sofas,https://cdn.shopify.com/s/files/1/0236/1829/products/284394_1.jpg?v=1652691355" | split: ','  %}
+
+  
+{% if materialFlag == true %}
+<div class="container"><header class="section__header" style="justify-content:center !important">
+ <h2 class="section__title heading product-heading h3"><a href="{{ pageHeadingMaterialLink }}">Shop Top {{ priceHeading }} Collections by Material</a></h2>
+ 
+</header></div>
+<div class="collectionrow">
+  <a href="{{ materialBlock1[0] }}">
+    <div class="collectioncolumn">
+      <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ materialBlock1[2] }}" alt="{{ materialBlock1[1] }}>" style="width:100%">
+      <p class="product-heading">Shop All {{ materialBlock1[1] }}></p>
+    </div>
+  </a>
+
+   
+   <a href="{{ materialBlock4[0] }}">
+    <div class="collectioncolumn">
+      <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ materialBlock4[2] }}" alt="{{ materialBlock4[1] }}>" style="width:100%">
+      <p class="product-heading">Shop All {{ materialBlock4[1] }}></p>
+    </div>
+  </a>
+   <a href="{{ materialBlock5[0] }}">
+    <div class="collectioncolumn">
+      <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ materialBlock5[2] }}" alt="{{ materialBlock5[1] }}>" style="width:100%">
+      <p class="product-heading">Shop All {{ materialBlock5[1] }}></p>
+    </div>
+  </a>
+  <a href="{{ materialBlock2[0] }}">
+    <div class="collectioncolumn">
+      <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ materialBlock2[2] }}" alt="{{ materialBlock2[1] }}>" style="width:100%">
+      <p class="product-heading">Shop All {{ materialBlock2[1] }}></p>
+    </div>
+  </a>
+   <a href="{{ materialBlock3[0] }}">
+    <div class="collectioncolumn">
+      <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ materialBlock3[2] }}" alt="{{ materialBlock3[1] }}>" style="width:100%">
+      <p class="product-heading">Shop All {{ materialBlock3[1] }}></p>
+    </div>
+  </a>
+</div>
+<br>
+{% endif %}
+
+
+
+  
+{% assign materialFlag1 = false %}
+{% if materialFlag1 == true %}
+  
+<div class="container"><header class="section__header" style="justify-content:center !important">
+  <h2 class="section__title heading product-heading h3"><a href="{{ pageHeadingMaterialLink }}">Shop Top {{ priceHeading }} Collections by Material</a></h2>
+  </header>
+</div>
+  
+<div class="container">
+  <div class="mosaic mosaic--large mosaic--three-columns">
+    <div class="mosaic__column">
+      <div class="mosaic__item">
+        <a id="block-xyzabc" class="promo-block promo-block--top-left " href="{{ materialBlock1[0] }}"><div class="promo-block__image-clip">
+        <div class="promo-block__image-wrapper promo-block__image-wrapper--cover image--fade-in lazyloaded"><div class="placeholder-background">
+         <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ materialBlock1[2] }}"> </div></div>
+        </div>
+        <div class="promo-block__inner"><p class="promo-block__heading heading h3">Shop All {{ materialBlock1[1] }}     >></p>
+        </div>
+       </a>
+      </div>
+      <div class="mosaic__item">
+        <a id="block-xyzabc" class="promo-block promo-block--top-left " href="{{ materialBlock2[0] }}"><div class="promo-block__image-clip">
+            <div class="promo-block__image-wrapper promo-block__image-wrapper--cover image--fade-in lazyloaded"><div class="placeholder-background" style="background: white;">
+                  <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ materialBlock2[2] }}"> </div></div>
+          </div>
+        
+          <div class="promo-block__inner"><p class="promo-block__heading heading h3">Shop All {{ materialBlock2[1] }}     >></p>
+          </div>
+        
+        </a>
+      </div>
+    </div>
+
+<div class="mosaic__column">
+  <div class="mosaic__item">
+<a id="block-xyzabc" class="promo-block promo-block--top-left" href="{{ materialBlock3[0] }}"><div class="promo-block__image-clip">
+    <div class="promo-block__image-wrapper promo-block__image-wrapper--cover image--fade-in lazyloaded"><div class="placeholder-background">
+    <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ materialBlock3[2] }}">      
+    </div></div>
+  </div>
+  <div class="promo-block__inner"><p class="promo-block__heading heading h3">Shop All {{ materialBlock3[1] }}     >></p>
+  </div>
+
+  </a>
+</div>
+</div>
+
+<div class="mosaic__column">
+  <div class="mosaic__item">
+<a id="block-xyzabc" class="promo-block promo-block--top-left " href="{{ materialBlock4[0] }}"><div class="promo-block__image-clip">
+    <div class="promo-block__image-wrapper promo-block__image-wrapper--cover image--fade-in lazyloaded"><div class="placeholder-background"> <img src="{{ materialBlock4[2] }}" >    
+    </div></div>
+  </div>
+
+  <div class="promo-block__inner"><p class="promo-block__heading heading h3">Shop All {{ materialBlock4[1] }}     >></p>
+  </div>
+  </a>
+</div>
+  <div class="mosaic__item">
+    <a id="block-xyzabc" class="promo-block promo-block--top-left " href="{{ materialBlock5[0] }}"><div class="promo-block__image-clip">
+        <div class="promo-block__image-wrapper promo-block__image-wrapper--cover image--fade-in lazyloaded"><div class="placeholder-background">
+            <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ materialBlock5[2] }}">  </div></div>
+      </div>
+    
+      <div class="promo-block__inner"><p class="promo-block__heading heading h3">Shop All {{ materialBlock5[1] }}     >></p>
+      </div>
+    </a>
+  </div>
+</div>
+</div>
+</div>
+<br>
+{% endif %}
+
+{% if priceFlag == true %}
+<div class="container"><header class="section__header" style="justify-content:center !important">
+<h2 class="section__title heading product-heading h3">Shop Top {{ priceHeading }} Collections by Price
+  </h2>
+</header></div>
+<div class="collectionrow">
+{% for producthead in priceProductHeading %}
+  <a href="{{ priceProductLink[forloop.index0] }}">
+    <div class="collectioncolumn">
+      <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ priceProductImg[forloop.index0] }}" alt="{{ producthead }}" style="width:100%">
+      <p class="product-heading">Shop All {{ producthead }}     ></p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+<br>
+{% endif %}
+
+
+{% if colorFlag == true %}
+    <div class="container"><header class="section__header" style="justify-content:center !important">
+        <h2 class="section__title heading product-heading h3"><a href="{{ pageHeadingColorLink }}">Shop Top {{ priceHeading }} Collections by Color</a></h2>
+    </header></div>
+                  
+    <div class="collectionrow">
+          {% for producthead in productColorLink %}
+            <a href= "{{ productColorLink[forloop.index0] }}">
+          <div class="collectioncolumn1">
+            <div class="rounddiv" style="background:{{ productColorHexCode[forloop.index0]  }}">
+              
+            </div>
+        	<p class="product-heading h4" style="margin: auto !important">{{ productColorHeading[forloop.index0] }}</p>
+            <div style="text-align: center;">
+              <p style="text-align: center;"class="shopnow-btn"><a href= "{{ productColorLink[forloop.index0] }}">Shop now</a></p>
+            </div>
+          </div>
+            </a>
+            {% endfor %}
+    </div>
+    <br>
+{% endif %}
+
+
+{% if sizeFlag == true %}
+<div class="container">
+  <header class="section__header" style="justify-content:center !important">
+    <h2 class="section__title heading product-heading h3">Shop Top {{ sizeHeading }} Collections by Size</h2>
+  </header>
+</div>
+<div class="collectionrow">
+{% for producthead in sizeProductHeading %}
+  <a href="{{ sizeProductLink[forloop.index0] }}">
+    <div class="collectioncolumn">
+      <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ sizeProductImg[forloop.index0] }}" alt="{{ producthead }}" style="width:100%">
+      <p class="product-heading">Shop All {{ producthead }}     ></p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+<br>
+{% endif %}
+{% if shapeFlag == true %}
+<div class="container"><header class="section__header" style="justify-content:center !important">
+<h2 class="section__title heading product-heading h3">Shop Top {{ shapeHeading }} Collections by Shape
+  </h2>
+</header></div>
+<div class="collectionrow">
+{% for producthead in shapeProductHeading %}
+  <a href="{{ shapeProductLink[forloop.index0] }}">
+    <div class="collectioncolumn">
+      <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ shapeProductImg[forloop.index0] }}" alt="{{ producthead }}" style="width:100%">
+      <p class="product-heading">Shop All {{ producthead }}     ></p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+<br>
+{% endif %}
+  
+{% if ourTrends == true %}
+<div class="container"><header class="section__header" style="justify-content:center !important">
+<h2 class="section__title heading product-heading h3">Modern Trends in {{ priceHeading }}</h2>
+</header></div>
+<div class="collectionrow">
+{% for producthead in ourTrendsHeading %}
+  <a href="{{ ourTrendsLink[forloop.index0] }}">
+    <div class="collectioncolumn">
+      <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ ourTrendsImg[forloop.index0] }}" alt="{{ producthead }}" style="width:100%">
+      <p class="product-heading h4">Shop All {{ producthead }}</p>
+      <div style="text-align: center;">
+        <p style="text-align: center;"class="shopnow-btn"><a href= "{{ ourTrendsLink[forloop.index0] }}">Shop now</a></p>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+<br>
+{% endif %}
+
+<style>
+.product-heading{
+	text-align: center;
+    /* font-weight: 700; */
+  font-weight: initial;
+      text-decoration: underline;
+}
+  .product-heading:hover{
+    color: #da6300;
+   
+}
+.box {
+  display: flex;
+  /*flex-flow: column wrap;*/
+}
+
+.right {
+  width: 33%;
+  padding:2%;
+}
+.img-page{
+	margin: 0 0 0 0  !important;
+}
+  
+#block-xyzabc {
+  background-color: #f3f4f4;
+  color: #4f5558
+}
+
+#block-xyzabc .button {
+  background: #4f5558;
+  color: #f3f4f4;
+}
+.bigger-heading{
+    font-size: calc(-1rem + 5.40119vw) !important;
+/*      font-size: calc(-4.98607rem + 7.40119vw) !important; */
+    color: #fff !important;
+  }
+.product-heading{
+	text-align: center;
+    font-weight: 700;
+}
+.box {
+  display: flex;
+  /*flex-flow: column wrap;*/
+}
+
+.right {
+  width: 33%;
+  padding:2%;
+}
+.img-page{
+	margin: 0 0 0 0  !important;
+}
+.pageHeadingPara{
+    padding-right: 4rem;
+    padding-left: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    justify-content: center;
+}
+.shopnow-btn{
+          margin-right: 0.25rem;
+          margin-left: 0.25rem;
+          color: #3079c3;
+          display: inline-block;
+          line-height: 1.06;
+          padding: 1rem 2rem;
+          letter-spacing: .01375rem;
+          border: 0.0625rem solid;
+          border-radius: 0.25rem;
+          font-size: .875rem;
+          font-weight: 500;
+          text-align: center;
+          transition: opacity 426ms cubic-bezier(.4,.9,.3,1),color 426ms cubic-bezier(.4,.9,.3,1),border-color 426ms cubic-bezier(.4,.9,.3,1),background-color 426ms cubic-bezier(.4,.9,.3,1);
+
+      }
+  /* Three image containers (use 25% for four, and 50% for two, etc) */
+.collectioncolumn {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+.collectioncolumn1{
+  float: left;
+  width: 16%;
+  padding: 10px;
+}
+.rounddiv{
+    height: 60px !important;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius:50%;
+      }
+.roundimg{
+  border-radius: 8px;
+}
+/* Clear floats after image containers */
+.collectionrow::after {
+  content: "";
+  clear: both;
+  display: table;
+} 
+  
+@media screen and (max-width: 700px){
+.collectionrow{
+    display: block;
+}
+.collectioncolumn1, .collectioncolumn{
+  width: 50% !important;
+}
+.rounddiv{
+    height: 42vw !important;
+}
+}
+</style>   
+
+
+
+    
+<!--     Sections added new 9/9/2022 End -->
+<!--   30/12/2020 Start Section addedshop-by-category -->
+<div class="container"><header class="section__header" style="justify-content:center !important">
+<h2 class="section__title heading product-heading h3">{{collection.title}} {% if linklists[collection.handle].links!= blank %} (Shop By Category)  {% endif%}</h2>
+</header></div>
+{% assign title =collection.handle %}
+{%- assign child_collection_links = linklists[title].links -%}
+ {% if linklists[title] != empty  %}
+	 <div class="collectionrow">
+	 {% for link in linklists[collection.handle].links %}
+      {%if link.type== 'page_link' %}
+      {%continue%}
+     {%endif%}
+     
+    {% assign collection_category = link.object %}
+	
+	
+	  <a href="{{ priceProductLink[forloop.index0] }}">
+		<div class="collectioncolumn">
+			 {% if collection_category.image %}              
+             
+			  <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ collection_category | img_url: '200x250' }}" alt="{{ collection_category.title | escape }}" style="width:100%">
+              {% else %}    
+
+			  <img class="image--fade-in lazyautosizes ls-is-cached lazyloaded" src="{{ collection_category.products.first | img_url: '200x250' }}" alt="{{ collection_category.title | escape }}" style="width:100%">
+			  
+              {% endif %}
+		  
+		  
+		  <p class="product-heading">Shop All {{ collection_category.title | truncate: 43}}></p>
+		</div>
+	  </a>
+	  {% endfor %}
+	</div>  
+  
+ {% endif %}
+  
+  
+  
+ <div style="height:10px"></div>
+  
+<!--   30/12/2020 End Section addedshop-by-category -->
+{% if collection.description != blank%}
+  <div class="container"><header class="section__header" style="justify-content:center !important">
+<h2 class="section__title heading product-heading h3">About {{ priceHeading }}</h2>
+</header></div>
+  <div class="container card">
+        {{ collection.description }}
+  </div>
+{% endif %}
+<div style="height:10px"></div>
+

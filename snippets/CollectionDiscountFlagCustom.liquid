@@ -1,0 +1,50 @@
+
+        {%- capture color_swatch -%}
+          {%- capture color_name -%}{{ section.id }}-{{ product.id }}{%- endcapture -%}
+
+          {%- for option in product.options_with_values -%}
+            {%- assign downcased_option = option.name | downcase -%}
+
+            {%- if color_label contains downcased_option -%}
+              {%- assign variant_option = 'option' | append: forloop.index -%}
+              {%- assign value_to_match = filtered_variant[variant_option] | default: option.selected_value -%}
+
+                      {%- for value in option.values -%}
+                                              {%- assign downcased_value = value | downcase -%}
+                                              {%- capture color_id -%}{{ color_name }}-{{ forloop.index }}{%- endcapture -%}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+
+                                              {%- for variant in product.variants -%}
+                                                {%- if variant[variant_option] == value -%}
+                                                  {%- assign variant_for_value = variant -%}
+                                                  {%- break -%}
+                                                {%- endif -%}
+                                              {%- endfor -%}
+
+                                              <div class="color-swatch {% if downcased_value == 'white' or downcased_value == 'blanc' %}color-swatch--white{% endif %}">
+                                                {%- if variant_for_value.featured_media -%}
+                                                  {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,500,600,700,800', image: variant_for_value.featured_media.preview_image -%}{%- endcapture -%}
+                                                  {%- assign image_url = variant_for_value.featured_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                                                {%- endif -%}
+
+                                                {%- assign color_swatch_name = value | handle | append: '.png' -%}
+                                                {%- assign color_swatch_image = images[color_swatch_name] -%}
+
+                                                <input class="color-swatch__radio" type="radio" name="{{ color_name }}" id="{{ color_id }}" value="{{ value | escape }}" {% if value_to_match == value %}checked="checked"{% endif %} data-variant-url="{{ variant_for_value.url }}" {% if variant_for_value.featured_media %}data-media-id="{{ variant_for_value.featured_media.id }}" data-image-url="{{ image_url }}" data-image-widths="[{{ supported_sizes }}]" data-image-aspect-ratio="{{ variant_for_value.featured_media.preview_image.aspect_ratio }}"{% endif %} aria-label="{{ value | escape }}">
+                             <label class="color-swatch__item lazyload" for="{{ color_id }}" {% if color_swatch_image != blank %}data-bg="{{ color_swatch_image | img_url: '64x64' }}"{% else %}style="background-image: url({{ variant_for_value.featured_media  | product_img_url: '120x120' }});"{% endif %} title="{{ value | escape }}">
+							 <span class="visually-hidden">{{ value }}</span>
+
+                                                </label>
+
+                                                  <a href="{{ product.url }}" class="color-swatch__item-link">+{{ option.values.size | minus: forloop.index0 }}</a>
+                                              </div>
+                      {%- endfor -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endcapture -%}
+{%- if color_swatch != blank -%}
+  <div class="product-item__swatch-list">
+    <div class="color-swatch-list">
+      {{ color_swatch }}
+    </div>
+  </div>
+{%- endif -%}

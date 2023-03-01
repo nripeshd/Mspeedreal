@@ -1,0 +1,192 @@
+
+{% comment %}-------------------------------{% endcomment %}
+<!--             Tejashwani Shipping Code -->
+{% comment %}-------------------------------{% endcomment %}
+{% comment %}-----------Price----------------------------------------------------------------------------{% endcomment %}
+{%- assign selected_variant = product.selected_or_first_available_variant -%}
+<!--       Shipping by theme  --> 
+<div class="price--large small-hide">
+   <span class="pricecustom" id="pricecustom">{{selected_variant.price | money}}</span>
+</div>
+
+<hr class=" small-hide">
+<!-- <hr class="price--large small-hide"> -->
+{% comment %}-----------Free Shipping----------------------------------------------------------------------------{% endcomment %}
+
+{% comment %}-----------Shipping Text and OrderNote----------------------------------------------------------------------------{% endcomment %}             
+
+<div></div>
+{% assign ordernote ='' %}
+{% if selected_variant.inventory_management %}
+      {% if selected_variant.inventory_quantity <= -300 %}
+          <span class="inventory" id="inventory">Sold Out</span>               
+          {% assign ordernote = 'Sold out' %}
+       
+       {%else%}
+          {% if selected_variant.inventory_quantity > 0 %}           
+              
+            {% assign fromDays = 7 | times: 86400 %}
+            {% assign toDays = 12 | times: 86400 %}
+            {%assign start_date="now" | date: "%s" | plus: fromDays | date: "%b %d" %}
+            {%assign end_date="now" | date: "%s" | plus: toDays | date: "%b %d" %}
+
+            
+            <span class="inventory" id="inventory"><b>In Stock.</b><br>Ships by {{ start_date }} - {{ end_date }}.</span>
+            {% assign ordernote = 'In Stock: Ships by '| append: start_date | append: ' to '| append: end_date  %}                             
+       
+          {%else%}
+              {% assign Dated = selected_variant.inventory_quantity | abs %}    
+              {% assign fromDays = Dated| plus: 7 | times: 86400 %}
+              {% assign toDays =  Dated| plus: 12 | times: 86400 %}
+              {%assign start_date="now" | date: "%s" | plus: fromDays | date: "%b %d" %}
+              {%assign end_date="now" | date: "%s" | plus: toDays | date: "%b %d" %}             
+              <span class="inventory" id="inventory">Ships by {{ start_date }} - {{ end_date }}.</span>
+              {% assign ordernote = 'Ships by '| append: start_date | append: ' to '| append: end_date  %}
+                       
+          {%endif%}   			
+      {% endif %}
+<!--           management else -->
+{% else %}
+    <span class="inventory" id="inventory">Sold out</span>               
+    {% assign ordernote = 'Sold out' %}
+   <!--    management endif -->    
+{% endif %}
+
+<!--      End Shipping by theme  -->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+function usePushState(handler){
+
+    //modern themes use pushstate to track variant changes without reload
+    function track (fn, handler, before) {
+        return function interceptor () {
+            if (before) {
+                handler.apply(this, arguments);
+                return fn.apply(this, arguments);
+            } else {
+                var result = fn.apply(this, arguments);
+                handler.apply(this, arguments);
+                return result;
+            }
+        };
+    }
+
+    var currentVariantId = null;
+    function variantHandler () {
+        var selectedVariantId = window.location.search.replace(/.*variant=(\d+).*/, '$1');
+        console.log('checking variant change to '+ selectedVariantId);
+        if(!selectedVariantId) return;
+        if(selectedVariantId != currentVariantId){
+            currentVariantId = selectedVariantId;
+            handler(selectedVariantId);
+        }
+    }
+
+    // Assign listeners
+    window.history.pushState = track(history.pushState, variantHandler);
+    window.history.replaceState = track(history.replaceState, variantHandler);
+    window.addEventListener('popstate', variantHandler);
+}
+usePushState(function(variantId){
+   var inv_qty = {};
+   var var_price = {};
+   var var_sku = {};
+  var price_money = {};
+  var variant_name = {};
+  var vardata = {};
+    {%- for variant in product.variants -%}  	
+      inv_qty[{{- variant.id -}}] = {{ variant.inventory_quantity | default: 0 }};
+      var_price[{{- variant.id -}}] = "{{ variant.price | money  }}";
+      price_money[{{- variant.id -}}] = '{{ variant.price }}';
+      variant_name[{{- variant.id -}}] = '{{ variant.title }}';
+      var_sku[{{- variant.id -}}] = '{{ variant.sku }}';
+     
+   {%- endfor -%}
+   console.log(var_sku[variantId]);
+   document.getElementById("variantsku").innerHTML = var_sku[variantId];
+   document.getElementById("pricecustom").innerHTML = var_price[variantId];
+   document.getElementById("optionvaluecustom").innerHTML = variant_name[variantId];
+    if(inv_qty[variantId]<= -300){
+      document.getElementById("inventory").innerHTML='Sold out';
+      document.getElementById("ordernote").value='Sold out';
+    }
+    else{
+        
+  if(inv_qty[variantId] > 0){
+     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+// Start DATE Calculation
+   const today_date1 = new Date();
+        const start_day= today_date1.getDate() + 7;
+        today_date1.setDate(start_day);    	
+         const year1=String(today_date1.getFullYear());
+         const start_month1 = monthNames[ today_date1.getMonth()];
+         const date1 = String(today_date1.getDate()).padStart(2, '0');
+         const start_date = start_month1  + ' '+ date1;
+    
+// End DATE Calculation
+        const today_date2 = new Date();
+        const end_day= today_date2.getDate() + 12;
+        today_date2.setDate(end_day);
+        //     	 const end_month = today_date2.getMonth();
+         const end_month1 = monthNames[ today_date2.getMonth()];
+         const date = String(today_date2.getDate()).padStart(2, '0');
+         const year2=String(today_date2.getFullYear());
+         const end_date = end_month1  + ' '+ date;
+   
+    document.getElementById("inventory").innerHTML='<b>In Stock.</b><br> Ships by '+ start_date + ' - ' +end_date;
+    document.getElementById("ordernote").value='In Stock: Ships by '+ start_date + ' - ' +end_date;
+
+  }  
+  else {
+    
+    
+    
+        
+             const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+            const qty= Math.abs(inv_qty[variantId]);
+        // Start DATE Calculation
+           const today_date1 = new Date();
+                const start_day= today_date1.getDate() + 7 + qty;
+    
+    
+    
+                today_date1.setDate(start_day);    	
+                //     	 const end_month = today_date2.getMonth();
+                 const start_month1 = monthNames[ today_date1.getMonth()];
+                 const date1 = String(today_date1.getDate()).padStart(2, '0');
+                 const year1=String(today_date1.getFullYear());
+      
+                 const start_date = start_month1  + ' '+ date1;
+
+        // End DATE Calculation
+                const today_date2 = new Date();
+                const end_day= today_date2.getDate() + 12 + qty;
+                today_date2.setDate(end_day);
+                //     	 const end_month = today_date2.getMonth();
+                 const end_month1 = monthNames[ today_date2.getMonth()];
+                 const date = String(today_date2.getDate()).padStart(2, '0');
+                 const year2=String(today_date2.getFullYear());
+                 const end_date = end_month1  + ' '+ date;
+            document.getElementById("inventory").innerHTML='Ships by '+ start_date + ' - ' +end_date;
+            document.getElementById("ordernote").value='Ships by '+ start_date + ' - ' +end_date;
+
+     
+    }
+    }
+    if(price_money[variantId]>= 10000)
+    {
+       var free_qty= document.getElementById("free_shipping_info").value;
+       document.getElementById("free_shipping_info").style.display = "block";
+       document.getElementById("free_shipping_info").textContent="Free Shipping";
+    }
+    else{
+       document.getElementById("free_shipping_info").style.display = "none";
+    }
+});
+});
+
+</script>
+{% comment %}-------------------------------{% endcomment %}
+<!--             Tejashwani Shipping Code -->
+{% comment %}-------------------------------{% endcomment %}

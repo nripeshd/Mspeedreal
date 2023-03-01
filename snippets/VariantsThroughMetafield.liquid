@@ -1,0 +1,45 @@
+<!-- checking if variant is available or not   -->
+{% assign flag = 0 %}
+ {% for variant in product.variants %}
+    {% if variant.available %}
+      {% assign flag = true %}
+    {% endif %}
+{% endfor %}
+<div class="row" style="display:flex;">
+{% for i in (1..10) %}
+  {% assign handle = i %} 
+  {% case handle %}
+    {% when 1 %}
+    {% assign metafield_variant =  product.metafields.custom.variant_ref_1.value %}
+    {% when 2 %}
+    {% assign metafield_variant =  product.metafields.custom.variant_ref_2.value %}
+     {% when 3 %}
+    {% assign metafield_variant =  product.metafields.custom.variant_ref_3.value %}
+     {% when 4 %}
+    {% assign metafield_variant =  product.metafields.custom.variant_ref_4.value %}
+     {% when 5 %}
+    {% assign metafield_variant =  product.metafields.custom.variant_ref_5.value %}
+     {% when 6 %}
+    {% assign metafield_variant =  product.metafields.custom.variant_ref_6.value %}
+     {% when 7 %}
+    {% assign metafield_variant =  product.metafields.custom.variant_ref_7.value %}
+     {% when 8 %}
+    {% assign metafield_variant =  product.metafields.custom.variant_ref_8.value %}
+     {% when 9 %}
+    {% assign metafield_variant =  product.metafields.custom.variant_ref_9.value %}
+     {% when 10 %}
+    {% assign metafield_variant =  product.metafields.custom.variant_ref_10.value %}
+    {% else %}
+  {% endcase %}
+  {% if metafield_variant %}
+    <div style="padding: 3px;">
+          <a href="{{ metafield_variant.url }}">  
+            <div class="bp-10">
+              <img src={{ metafield_variant.featured_image | img_url: '150px' }} class="variant-swatch-image-tez">
+<!--             <p class="">{{metafield_variant.price | money}}</p> -->
+            </div>
+          </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
